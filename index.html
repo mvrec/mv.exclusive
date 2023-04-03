@@ -103,6 +103,7 @@
 
 <script type="text/javascript">
     var videourl;
+    var filelink;
   $(document).ready(function () {
     function getUrlParameter(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -131,6 +132,7 @@
         $('.artwork_background').css('background-image', 'url("' + spData.Cover + '")');
         $('.artwork_image_box').css('background-image', 'url("' + spData.Cover + '")');
         videourl = spData.Video;
+        filelink = spData.File;
         $('#SpotifyAlbumId').attr('src', 'https://open.spotify.com/embed/album/'+spData.Albumid+'?utm_source=generator');
         }else{
         $('.artwork_background').css('background-image', 'url("./images/demo.png")');
@@ -201,11 +203,11 @@ else {
   });
 }
   
-    // var link = document.createElement("a");
-    // link.setAttribute("href", filelink);
-    // link.setAttribute("download", "filename.mp3");
-    // link.click();
-    // event.preventDefault();
+    var link = document.createElement("a");
+    link.setAttribute("href", filelink);
+    link.setAttribute("download", "filename.mp3");
+    link.click();
+    event.preventDefault();
   };
 
 
